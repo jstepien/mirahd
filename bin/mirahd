@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+if ARGV.include? '--daemon'
+  require 'mirahd/server'
+  server = MirahD::Server.new
+  server.start
+  puts 'Ready.' unless ARGV.include? '--quiet'
+  server.wait
+else
+  require 'mirahd/client'
+  MirahD::Client.new.compile ARGV
+end
