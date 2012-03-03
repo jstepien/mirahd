@@ -4,6 +4,7 @@ require 'mirahd/client'
 
 describe MirahD::Client do
   before :all do
+    wait_for_the_port_to_become_free 8787
     @server = MirahD::Server.new
     @server.start
   end
