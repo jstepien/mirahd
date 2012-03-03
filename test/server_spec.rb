@@ -80,8 +80,6 @@ describe MirahD::Server do
     end
 
     describe 'and given an invalid input file' do
-      source = 'Gemfile.lock'
-
       it 'should fail' do
         lambda { @remote.compile [BadSource] } .should raise_error
       end
