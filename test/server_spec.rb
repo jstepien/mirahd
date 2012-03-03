@@ -68,12 +68,12 @@ describe MirahD::Server do
 
     describe 'and given a valid input file' do
       it 'should compile it to Java' do
-        @remote.compile(['--java', Source]).should == true
+        @remote.compile(['--java', Source]).should_not be_nil
         File.file?(JavaFile).should == true
       end
 
       it 'should compile it to a JVM class' do
-        @remote.compile([Source]).should == true
+        @remote.compile([Source]).should_not be_nil
         File.file?(ClassFile).should == true
       end
     end

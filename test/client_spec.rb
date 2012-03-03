@@ -21,12 +21,16 @@ describe MirahD::Client do
   end
 
   it 'can compile to Java source code' do
-    @client.compile(['--java', Source]).should == true
+    @client.compile(['--java', Source]).should_not be_nil
     File.file?(JavaFile).should == true
   end
 
   it 'can compile a JVM class' do
-    @client.compile([Source]).should == true
+    @client.compile([Source]).should_not be_nil
     File.file?(ClassFile).should == true
+  end
+
+  it 'receives compiler\'s standard output' do
+    @client.compile([Source]).should =~ /^Parsing.*Inferring.*Done!$/m
   end
 end

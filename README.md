@@ -58,7 +58,6 @@ Todo
     can `eval` whatever you want to. `$SAFE` won't work as it's unsupported
     by JRuby.
   * Enable users to specify the port number.
-  * Redirect compiler's standard output and error to the client.
   * Write tests covering a server running in a different directory then the
     client. It won't be possible without spawning 2 separate processes.
   * Support `--help` et al. command line arguments.

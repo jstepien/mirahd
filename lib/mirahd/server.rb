@@ -1,14 +1,20 @@
 require 'drb/drb'
+require 'stringio'
 require 'mirah'
 
 module MirahD
   class Server
     class Compiler
       def compile args, dir = FileUtils.pwd
+        result = ''
         FileUtils.cd dir do
+          orig_stdout = $stdout
+          $stdout = StringIO.new 'w'
           Mirah::Commands::Compile.new(args).execute
+          result = $stdout.string
+          $stdout = orig_stdout
         end
-        true
+        result
       end
     end
 

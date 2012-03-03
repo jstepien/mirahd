@@ -7,5 +7,5 @@ if ARGV.include? '--daemon'
   server.wait
 else
   require 'mirahd/client'
-  MirahD::Client.new.compile ARGV
+  puts MirahD::Client.new.compile ARGV
 end
