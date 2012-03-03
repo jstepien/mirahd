@@ -34,6 +34,7 @@ describe MirahD::Server do
 
     after do
       @server.stop if @server.running?
+      rm_f_temp_files
     end
 
     it 'knows that it is running' do
@@ -69,13 +70,11 @@ describe MirahD::Server do
       it 'should compile it to Java' do
         @remote.compile(['--java', Source]).should == true
         File.file?(JavaFile).should == true
-        FileUtils.rm_f JavaFile
       end
 
       it 'should compile it to a JVM class' do
         @remote.compile([Source]).should == true
         File.file?(ClassFile).should == true
-        FileUtils.rm_f ClassFile
       end
     end
 
