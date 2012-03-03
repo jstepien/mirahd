@@ -1,4 +1,5 @@
 require 'test/common'
+require 'mirahd/server'
 require 'mirahd/client'
 
 describe MirahD::Client do
