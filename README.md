@@ -4,6 +4,8 @@ mirahd
 **mirahd** is a Mirah Daemon listening for your requests to compile something.
 When it receives one it does the job quickly. _Really quickly_.
 
+[![Build Status](https://secure.travis-ci.org/jstepien/mirahd.png?branch=master)](http://travis-ci.org/jstepien/mirahd)
+
 Usage
 -----
 
