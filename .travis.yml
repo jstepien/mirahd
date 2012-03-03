@@ -1,3 +1,4 @@
 language: ruby
 rvm:
   - jruby-18mode
+script: bundle exec rspec test
