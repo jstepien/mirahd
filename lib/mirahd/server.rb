@@ -6,15 +6,27 @@ module MirahD
   class Server
     class Compiler
       def compile args, dir = FileUtils.pwd
-        result = ''
-        FileUtils.cd dir do
-          orig_stdout = $stdout
-          $stdout = StringIO.new 'w'
-          Mirah::Commands::Compile.new(args).execute
-          result = $stdout.string
-          $stdout = orig_stdout
+        intercepting_stdout do
+          FileUtils.cd dir do
+            Mirah::Commands::Compile.new(args).execute
+          end
         end
-        result
+      end
+
+      private
+
+      def intercepting_stdout
+        orig_stdout = $stdout
+        $stdout = StringIO.new 'w'
+        yield
+      rescue Exception => ex
+        new_ex = StandardError.new $stdout.string
+        new_ex.set_backtrace ex.backtrace
+        raise new_ex
+      else
+        $stdout.string
+      ensure
+        $stdout = orig_stdout
       end
     end
 

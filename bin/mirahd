@@ -7,5 +7,10 @@ if ARGV.include? '--daemon'
   server.wait
 else
   require 'mirahd/client'
-  puts MirahD::Client.new.compile ARGV
+  begin
+    puts MirahD::Client.new.compile ARGV
+  rescue => ex
+    $stderr.puts ex.message
+    exit 1
+  end
 end

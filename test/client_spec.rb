@@ -34,4 +34,18 @@ describe MirahD::Client do
   it 'receives compiler\'s standard output' do
     @client.compile([Source]).should =~ /^Parsing.*Inferring.*Done!$/m
   end
+
+  describe 'after failed compilation' do
+    it 'receives an exception' do
+      lambda { @client.compile([BadSource]) } .should raise_error StandardError
+    end
+
+    it 'receives error messages' do
+      begin
+        @client.compile([BadSource])
+      rescue => ex
+        ex.message.should =~ /^Parsing.*expected statement.*at line/m
+      end
+    end
+  end
 end
