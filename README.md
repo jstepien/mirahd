@@ -62,6 +62,8 @@ Todo
   * Write tests covering a server running in a different directory then the
     client. It won't be possible without spawning 2 separate processes.
   * Support `--help` et al. command line arguments.
+  * Concurrency. Two compilation requests might interfere with each other,
+    especially due to changing the current working directory.
 
 Copyrights
 ----------
