@@ -3,7 +3,7 @@ GEM
   specs:
     bitescript (0.1.0)
     diff-lcs (1.1.3)
-    mirah (0.0.10-java)
+    mirah (0.0.11-java)
       bitescript (>= 0.0.8)
     rspec (2.9.0)
       rspec-core (~> 2.9.0)
