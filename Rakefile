@@ -18,7 +18,10 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "https://github.com/jstepien/mirahd"
   gem.license = "MIT"
   gem.summary = %Q{Mirah compilation daemon (in dire need of Javanese name)}
-  gem.description = File.read "README.md"
+  gem.description = <<EOF
+mirahd is a Mirah Daemon listening for your requests to compile something.
+When it receives one it does the job quickly. Really quickly.
+EOF
   gem.email = "jstepien@users.sourceforge.net"
   gem.authors = ["Jan Stępień"]
   # dependencies defined in Gemfile
