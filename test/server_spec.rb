@@ -56,15 +56,16 @@ describe MirahD::Server do
 
     it 'the #wait method should keep it running' do
       # FIXME: busy waiting is considered evil.
-      failed = false
+      running = false
       thr = Thread.start do
         @server.wait
-        failed = @server.running?
+        running = @server.running?
       end
       sleep 0.1 until @server.running?
+      running = true
       @server.stop
       thr.join
-      failed.should == false
+      running.should == false
     end
 
     describe 'and given a valid input file' do
