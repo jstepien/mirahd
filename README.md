@@ -20,7 +20,7 @@ implementation with a reasonably short start up time. MRI or Rubinius
 are good candidates.
 
     jruby -S bundle install
-    jruby -S rspec test
+    jruby -S rspec -I. test
     jruby -rubygems -I lib -S bin/mirahd --daemon
     ruby -I lib bin/mirahd test/hello.mirah
 
