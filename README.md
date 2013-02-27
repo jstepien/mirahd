@@ -12,8 +12,8 @@ Usage
 We'll need:
 
   * Bundler,
-  * Mirah, and as a result
-  * JRuby 1.6.
+  * Mirah 0.1, and as a result
+  * JRuby 1.7.
 
 For your own comfort and sanity it is also advisable to install a Ruby
 implementation with a reasonably short start up time. MRI or Rubinius
