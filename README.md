@@ -5,6 +5,7 @@ mirahd
 When it receives one it does the job quickly. _Really quickly_.
 
 [![Build Status](https://secure.travis-ci.org/jstepien/mirahd.png?branch=master)](http://travis-ci.org/jstepien/mirahd)
+[![Code Climate](https://codeclimate.com/github/jstepien/mirahd.png)](https://codeclimate.com/github/jstepien/mirahd)
 
 Usage
 -----
