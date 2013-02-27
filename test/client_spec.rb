@@ -21,11 +21,6 @@ describe MirahD::Client do
     rm_f_temp_files
   end
 
-  it 'can compile to Java source code' do
-    @client.compile(['--java', Source]).should_not be_nil
-    File.file?(JavaFile).should == true
-  end
-
   it 'can compile a JVM class' do
     @client.compile([Source]).should_not be_nil
     File.file?(ClassFile).should == true
@@ -44,7 +39,7 @@ describe MirahD::Client do
       begin
         @client.compile([BadSource])
       rescue => ex
-        ex.message.should =~ /^Parsing.*expected statement.*at line/m
+        ex.message.should =~ /^Parsing\..*#{BadSource}.*\n1 errors?, exiting/m
       end
     end
   end
