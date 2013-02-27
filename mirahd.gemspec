@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "mirahd"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jan St\304\231pie\305\204"]
-  s.date = "2013-01-10"
+  s.authors = ["Jan St\u{119}pie\u{144}"]
+  s.date = "2013-02-27"
   s.description = "mirahd is a Mirah Daemon listening for your requests to compile something.\nWhen it receives one it does the job quickly. Really quickly.\n"
   s.email = "jstepien@users.sourceforge.net"
   s.executables = ["mirahd"]
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/jstepien/mirahd"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.15"
+  s.rubygems_version = "1.8.24"
   s.summary = "Mirah compilation daemon (in dire need of Javanese name)"
 
   if s.respond_to? :specification_version then
