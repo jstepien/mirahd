@@ -69,7 +69,7 @@ Todo
 Copyrights
 ----------
 
-Copyright (c) 2012 Jan Stępień
+Copyright (c) 2012–2013 Jan Stępień
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
